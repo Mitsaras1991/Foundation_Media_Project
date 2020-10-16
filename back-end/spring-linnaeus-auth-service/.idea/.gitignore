@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../:\Users\mitso\Downloads\spring-boot-react-oauth2-social-login-demo-master\spring-boot-react-oauth2-social-login-demo-master\spring-social\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
