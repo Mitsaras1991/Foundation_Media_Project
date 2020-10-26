@@ -27,7 +27,7 @@ INSERT INTO Security_Role (role_ID, description, kind) VALUES
 -- Dumping data for table `User`
 --
 
-INSERT INTO User (id, username, email,email_verified, role_id, Organization, Lat, Long,image_url) VALUES
+INSERT INTO User (id, username, email,email_verified, role_id, Organization, lat, longitude,image_url) VALUES
 (1, 'doc', 'doc@hospital.com',true ,2, 1, NULL, NULL,NULL ),
 (2, 'researcher', 'res@uni.se', true,3, 2, NULL, NULL,NULL ),
 (3, 'patient1', 'x@gmail.com', true,1, 1, 59.6567, 16.6709,NULL ),
