@@ -21,7 +21,7 @@ INSERT INTO Security_Role (role_ID, description, kind) VALUES
 (1, 'patient', '1'),
 (2, 'physician', '2'),
 (3, 'researcher', '3'),
-(4, 'junior researcher', '3');
+
 -- --------------------------------------------------------
 --
 -- Dumping data for table `User`

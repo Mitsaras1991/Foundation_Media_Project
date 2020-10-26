@@ -21,7 +21,7 @@ CREATE TABLE User (
   Organization INT NOT NULL default 1,
   Lat FLOAT DEFAULT NULL,
   Long FLOAT DEFAULT NULL,
- image_url VARCHAR(255) DEFAULT NULL ,
+ image_url VARCHAR(2550) DEFAULT NULL ,
    FOREIGN KEY (Organization) REFERENCES Organization(organizationID),
    FOREIGN KEY (role_id) REFERENCES Security_Role(role_ID)
 );
