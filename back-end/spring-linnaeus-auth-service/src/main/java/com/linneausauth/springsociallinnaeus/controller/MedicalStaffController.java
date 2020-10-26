@@ -17,7 +17,7 @@ public class MedicalStaffController {
     private final Long PatientRoleId=new Long(1);
     @Autowired
     private UserRepository userRepository;
-    @GetMapping("/med/'patients")
+    @GetMapping("/med/patients")
     @PreAuthorize("hasAuthority('physician')" +
             " || hasAuthority('researcher')" )
     public List<User> getAllPatient(){
