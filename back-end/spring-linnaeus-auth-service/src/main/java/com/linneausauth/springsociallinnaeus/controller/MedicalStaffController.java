@@ -21,6 +21,7 @@ public class MedicalStaffController {
     @PreAuthorize("hasAuthority('physician')" +
             " || hasAuthority('researcher')" )
     public List<User> getAllPatient(){
+        logger.info("MEDICAL STAFF PATIENTS LIST VIEW");
         return userRepository.findAllByRoleId(PatientRoleId);
     }
 }
