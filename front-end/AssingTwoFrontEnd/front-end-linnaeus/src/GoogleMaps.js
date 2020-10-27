@@ -64,7 +64,8 @@ export class MapContainer extends React.Component {
           key={index} 
           position={{ lat: pa.latitude, lng: pa.longitude}} 
           onClick={this.onMarkerClick}
-          name={pa.name}>    
+          name={pa.name}
+          id={pa.id}>    
           </Marker>)}
          <InfoWindow marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}>

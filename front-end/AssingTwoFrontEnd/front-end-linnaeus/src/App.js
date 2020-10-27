@@ -13,6 +13,7 @@ import Dashboard from './Dashboard';
 import { ACCESS_TOKEN } from './constants';
 import PatientListView from './Views/PatientListView';
 import RolePatientView from './Views/RolePatientView';
+import PatientDataVisualization from './PatientDataVisualization';
 
 class App extends React.Component {
   constructor(props){
@@ -75,8 +76,9 @@ class App extends React.Component {
                      <AuthenticatedRoute  path="/csv/:dataUrl/view"  comp={CsvFileView}
                       authenticated={this.state.authenticated} user={this.state.currentUser}>
                       </AuthenticatedRoute>
-                      
-                      
+                      <AuthenticatedRoute  path="/med/:patientID/vis"  comp={PatientDataVisualization}
+                      authenticated={this.state.authenticated} user={this.state.currentUser}>
+                      </AuthenticatedRoute>
                       <AuthenticatedRoute  path="/med/patients/view"  comp={PatientListView}
                       authenticated={this.state.authenticated} user={this.state.currentUser}>
                       </AuthenticatedRoute>

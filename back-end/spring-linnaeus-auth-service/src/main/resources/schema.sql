@@ -44,8 +44,8 @@ CREATE TABLE Therapy_List (
 CREATE TABLE Therapy (
   therapyID BIGINT  NOT NULL PRIMARY KEY AUTO_INCREMENT ,
   User_IDpatient int(11) NOT NULL,
-  User_IDmed int(11) NOT NULL,
-  TherapyList_ID int(11) NOT NULL,
+  User_IDmed BIGINT NOT NULL,
+  TherapyList_ID BIGINT NOT NULL,
   FOREIGN KEY (User_IDmed) REFERENCES User(id),
   FOREIGN KEY (User_IDpatient) REFERENCES User(id),
   FOREIGN KEY (TherapyList_ID) REFERENCES Therapy_List(therapy_listID)
@@ -57,7 +57,7 @@ CREATE TABLE Therapy (
 
 CREATE TABLE Test (
     testID BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    dateTime datetime NOT NULL,
+    dateTime DATETIME NOT NULL,
     TherapyID int(11) NOT NULL,
     FOREIGN KEY (TherapyID) REFERENCES Therapy(therapyID)
 );

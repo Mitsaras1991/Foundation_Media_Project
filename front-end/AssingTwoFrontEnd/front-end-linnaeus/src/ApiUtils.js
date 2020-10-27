@@ -121,6 +121,16 @@ export function getPatients(){
         method: 'GET'
     });
 }
+export function getPatientTests(patientID){
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    
+    return request({
+        url: API_BASE_URL + `/patient/${patientID}/tests`,
+        method: 'GET'
+    });
+}
 function blobToFile(theBlob, fileName){
     //A Blob() is almost a File() - it's just missing the two properties below which we will add
     theBlob.lastModifiedDate = new Date();
