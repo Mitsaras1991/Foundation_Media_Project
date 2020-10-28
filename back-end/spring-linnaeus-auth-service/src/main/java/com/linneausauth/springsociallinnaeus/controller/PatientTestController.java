@@ -1,6 +1,7 @@
 package com.linneausauth.springsociallinnaeus.controller;
 
 import com.linneausauth.springsociallinnaeus.exception.ResourceNotFoundException;
+import com.linneausauth.springsociallinnaeus.model.PatientTestSessionData;
 import com.linneausauth.springsociallinnaeus.model.Test;
 import com.linneausauth.springsociallinnaeus.model.User;
 import com.linneausauth.springsociallinnaeus.repository.TestRepo;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class PatientTestController {
@@ -24,13 +24,14 @@ public class PatientTestController {
     @Autowired
     private UserRepository userRepository;
     @GetMapping(value = "/patient/{patientID}/tests")
-    @PreAuthorize("hasAuthority('physician')" +
+    @PreAuthorize("hasAuthority('doctor')" +
             " || hasAuthority('researcher')" )
     public List<Test> getPatientsTest(@PathVariable(value = "patientID") Long patientID){
         logger.info("Patient Test");
         User user=userRepository.findById(patientID).orElseThrow(()->new ResourceNotFoundException("Patient",patientID.toString(),patientID));;
         logger.info(user.getEmail());
-        List<Test> tests=testRepo.findAllByTherapyIdPatient(user);
+        List<Test> tests=testRepo.findAll();
+        tests.forEach(t -> System.out.println(t.getDate()));
         return testRepo.findAllByTherapyIdPatient(user);
     }
 }

@@ -121,6 +121,17 @@ export function getPatients(){
         method: 'GET'
     });
 }
+export function getTestSessionPatient(patientID){
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    
+    return request({
+         url: API_BASE_URL + `/testSessions/${patientID}/`,
+        method: 'GET'
+    });
+}
+
 export function getPatientTests(patientID){
     if(!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
@@ -128,6 +139,16 @@ export function getPatientTests(patientID){
     
     return request({
         url: API_BASE_URL + `/patient/${patientID}/tests`,
+        method: 'GET'
+    });
+}
+export function getSessionNotes(fileName){
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    
+    return request({
+        url: API_BASE_URL + `/testSessions/${fileName}/notes`,
         method: 'GET'
     });
 }

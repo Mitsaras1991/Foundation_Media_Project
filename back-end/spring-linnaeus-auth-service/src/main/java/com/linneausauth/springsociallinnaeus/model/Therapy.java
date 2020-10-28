@@ -10,13 +10,13 @@ public class Therapy {
     @Column(name = "therapyID")
     private Long id;
     @OneToOne
-    @JoinColumn(name = "User_IDpatient", referencedColumnName = "id")
+    @JoinColumn(name = "patient", referencedColumnName = "id")
     private User patient;
     @OneToOne
-    @JoinColumn(name = "User_IDmed", referencedColumnName = "id")
+    @JoinColumn(name = "med", referencedColumnName = "id")
     private User medical;
     @OneToOne
-    @JoinColumn(name = "TherapyList_ID", referencedColumnName = "therapy_listID")
+    @JoinColumn(name = "TH_LIST", referencedColumnName = "therapy_listID",nullable = false)
     private TherapyList therapyList;
 
     public Therapy() {

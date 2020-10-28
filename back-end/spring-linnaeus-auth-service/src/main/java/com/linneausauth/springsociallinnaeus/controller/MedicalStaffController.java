@@ -18,7 +18,7 @@ public class MedicalStaffController {
     @Autowired
     private UserRepository userRepository;
     @GetMapping("/med/patients")
-    @PreAuthorize("hasAuthority('physician')" +
+    @PreAuthorize("hasAuthority('doctor')" +
             " || hasAuthority('researcher')" )
     public List<User> getAllPatient(){
         logger.info("MEDICAL STAFF PATIENTS LIST VIEW");

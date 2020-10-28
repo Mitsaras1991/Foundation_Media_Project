@@ -19,7 +19,7 @@ INSERT INTO Organization (`organizationID`, `name`) VALUES
 --
 INSERT INTO Security_Role (role_ID, description, kind) VALUES
 (1, 'patient', '1'),
-(2, 'physician', '2'),
+(2, 'doctor', '2'),
 (3, 'researcher', '3'),
 (4, 'junior researcher', '3');
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ INSERT INTO Therapy_List (therapy_listID, name, MedicineID, Dosage) VALUES
 --
 -- Dumping data for table `Therapy`
 --
-INSERT INTO Therapy (therapyID, User_IDpatient, User_IDmed, TherapyList_ID) VALUES
+INSERT INTO Therapy (therapyID, patient, med, TH_LIST) VALUES
 (1, 3, 1, 1),
 (2, 4, 1, 1);
 -- --------------------------------------------------------
@@ -53,7 +53,7 @@ INSERT INTO Therapy (therapyID, User_IDpatient, User_IDmed, TherapyList_ID) VALU
 -- Dumping data for table `Test`
 --
 
-INSERT INTO Test (testID, dateTime, TherapyID) VALUES
+INSERT INTO Test (testID, da, TherapyID) VALUES
 (1, '2009-12-01 18:00:00', 1),
 (2, '2009-12-02 18:00:00', 1),
 (3, '2009-12-02 18:00:00', 2);
@@ -70,13 +70,13 @@ INSERT INTO Test_Session (test_SessionID, test_type, Test_ID, DataURL) VALUES
 (4, 2, 2, 'data4'),
 (5, 1, 3, 'data5'),
 (6, 2, 3, 'data6');
-INSERT INTO Patient_Test_Session_Data(dataID,patUsername,tSessionID) VALUES
-(1,'patient1',1),
-(2,'patient1',2),
-(3,'patient1',3),
-(4,'patient1',4),
-(5,'patient2',5),
-(6,'patient2',6);
+INSERT INTO PatientTestSessionData (dataID,patientID,tSessionID) VALUES
+(1,3,1),
+(2,3,2),
+(3,3,3),
+(4,3,4),
+(5,4,5),
+(6,4,6);
 -- --------------------------------------------------------
 --
 -- Dumping data for table `Note`

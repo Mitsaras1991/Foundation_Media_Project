@@ -1,6 +1,7 @@
 package com.linneausauth.springsociallinnaeus.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -12,17 +13,16 @@ public class Test {
     @Column(name = "testID")
     private Long id;
 
-    @Column(name = "dateTime")
-    @Temporal(TemporalType.DATE)
-    private Date date;
-    @OneToOne
+    @Column(name = "da",columnDefinition="TIMESTAMP",nullable = false)
+    private LocalDate date;
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "TherapyID", referencedColumnName = "therapyID")
     private Therapy therapyId;
 
     public Test() {
     }
 
-    public Test(Date date, Therapy therapy) {
+    public Test(LocalDate date, Therapy therapy) {
         this.date = date;
         this.therapyId = therapy;
     }
@@ -31,7 +31,7 @@ public class Test {
         return id;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -39,7 +39,7 @@ public class Test {
         return therapyId;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

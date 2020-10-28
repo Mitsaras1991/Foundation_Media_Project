@@ -43,12 +43,12 @@ CREATE TABLE Therapy_List (
 
 CREATE TABLE Therapy (
   therapyID BIGINT  NOT NULL PRIMARY KEY AUTO_INCREMENT ,
-  User_IDpatient int(11) NOT NULL,
-  User_IDmed BIGINT NOT NULL,
-  TherapyList_ID BIGINT NOT NULL,
-  FOREIGN KEY (User_IDmed) REFERENCES User(id),
-  FOREIGN KEY (User_IDpatient) REFERENCES User(id),
-  FOREIGN KEY (TherapyList_ID) REFERENCES Therapy_List(therapy_listID)
+  patient BIGINT NOT NULL,
+  med BIGINT NOT NULL,
+  TH_LIST BIGINT NOT NULL,
+  FOREIGN KEY (med) REFERENCES User(id),
+  FOREIGN KEY (patient) REFERENCES User(id),
+  FOREIGN KEY (TH_LIST) REFERENCES Therapy_List(therapy_listID)
   );
 
 --
@@ -57,8 +57,8 @@ CREATE TABLE Therapy (
 
 CREATE TABLE Test (
     testID BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    dateTime DATETIME NOT NULL,
-    TherapyID int(11) NOT NULL,
+    da DATETIME NOT NULL,
+    TherapyID LONG NOT NULL,
     FOREIGN KEY (TherapyID) REFERENCES Therapy(therapyID)
 );
 --
@@ -76,18 +76,18 @@ CREATE TABLE Test_Session
 --
 -- Table structure for table `Note`
 --
-CREATE TABLE Patient_Test_Session_Data
+CREATE TABLE PatientTestSessionData
 (
     dataID     BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    patUsername      VARCHAR(255) NOT NULL,
+    patientID   BIGINT NOT NULL,
     tSessionID BIGINT NOT NULL,
-    FOREIGN KEY (patUsername) REFERENCES User(username),
+    FOREIGN KEY (patientID) REFERENCES User(id),
     FOREIGN KEY (tSessionID) REFERENCES Test_Session(test_SessionID)
 );
 CREATE TABLE Note (
   noteID BIGINT NOT NULL  PRIMARY KEY AUTO_INCREMENT,
   Test_Session_ID BIGINT NOT NULL,
-  note longtext NOT NULL,
+  note VARCHAR(255) NOT NULL,
   User_IDmed BIGINT NOT NULL,
   FOREIGN KEY (Test_Session_ID) REFERENCES Test_Session(test_SessionID),
   FOREIGN KEY (User_IDmed) REFERENCES User(id)

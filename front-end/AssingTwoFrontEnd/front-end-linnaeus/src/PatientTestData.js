@@ -3,36 +3,67 @@ import { Table, Toast } from 'react-bootstrap'
 
 const { Link } = require("react-router-dom")
 
-export const PatientTestData=({sessionList})=>(
-<div>
- <Table>
-    <thead>
-     <tr>
-        <th>#</th>
-        <th>Test type</th>
-        <th>Test id</th>
-        <th>FileName</th>
-        <th>Details</th>
-     </tr>
-  </thead>
-  <tbody>
-        {sessionList.map((item,index)=>
-        <Session key={index}  session={item}/>
-        )}
-  </tbody>
- </Table>
-</div>)
+export class PatientTestData extends React.Component{
+  constructor(props){
+    super(props)
+  }
+
+  render(){
+    console.log(this.props.sessionList) 
+    return(
+  <div>
+   <Table>
+      <thead>
+       <tr>
+          <th>#</th>
+          <th>Test type</th>
+          <th>Test id</th>
+          <th>FileName</th>
+          <th>Details</th>
+       </tr>
+    </thead>
+    <tbody><tr/>
+    {this.props.sessionList.map((item,index)=>(<tr key={index}>
+      <td>{item.id}</td>
+      <td>{item.testType}</td>
+      <td>{item.testId.id}</td>
+      <td>{item.dataUrl}</td>
+      <td>    <Link {...this.props} to={{
+        
+        pathname:`/test/${item.testType}/${item.dataUrl}/view`
+        }}>View</Link></td>
+            
+      </tr>))}
+{/*           {this.props.sessionList.forEach((el,index) => (
+          
+            <tr>
+            <td>{el.id}</td>
+      <td>{el.testType}</td>
+      <td>{el.testId}</td>
+      <td>{el.dataUrl}</td>
+        <td>{    <Link to={{
+        pathname:`/csv/${el.dataUrl}/view`
+        }}>View</Link>}</td>
+            </tr>
+          
+          ))} */}
+    </tbody>
+   </Table>
+  </div>)
+  }
+}
 const Session=({session})=>{
     console.log(session)
-    return(<tr>
+    return(<>
       <td>{session.id}</td>
       <td>{session.testType}</td>
       <td>{session.testId}</td>
       <td>{session.dataUrl}</td>
-        <td>{    <Link to={{
+      <td>    <Link to={{
+        state:{from:session.testType},
         pathname:`/csv/${session.dataUrl}/view`
-        }}>View</Link>}</td>
-    </tr>)
+        }}>View</Link></td>
+    </>)
 
   /*   {session.dataUrl}
 
