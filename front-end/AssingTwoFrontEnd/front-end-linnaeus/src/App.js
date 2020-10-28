@@ -11,6 +11,11 @@ import Header from './common/Header';
 import CsvFileView from './CsvFileView';
 import Dashboard from './Dashboard';
 import { ACCESS_TOKEN } from './constants';
+import PatientListView from './Views/PatientListView';
+import RolePatientView from './Views/RolePatientView';
+import PatientDataVisualization from './PatientDataVisualization';
+import ProfileInfo from './OAuth2/profile/ProfileInfo';
+import YoutubeList from './YoutubeList';
 
 class App extends React.Component {
   constructor(props){
@@ -67,10 +72,19 @@ class App extends React.Component {
               <div className="app-body">
              <Switch>
                      <Route exact path="/" render={props=><Home authenticated={this.state.authenticated} {...props}/>}/>
-                     <AuthenticatedRoute  path="/dashboard"  comp={Dashboard}
+                     <AuthenticatedRoute  path="/profile"  comp={ProfileInfo}
                      authenticated={this.state.authenticated} user={this.state.currentUser}>
                      </AuthenticatedRoute>
-                     <AuthenticatedRoute  path="/csv/:dataUrl/view"  comp={CsvFileView}
+                     <AuthenticatedRoute  path="/patient/exercise/videos"  comp={YoutubeList}
+                     authenticated={this.state.authenticated} user={this.state.currentUser}>
+                     </AuthenticatedRoute>
+                     <AuthenticatedRoute  path="/test/:testType/:dataUrl/view"  comp={CsvFileView}
+                      authenticated={this.state.authenticated} user={this.state.currentUser}>
+                      </AuthenticatedRoute>
+                      <AuthenticatedRoute  path="/med/:patientID/vis"  comp={PatientDataVisualization}
+                      authenticated={this.state.authenticated} user={this.state.currentUser}>
+                      </AuthenticatedRoute>
+                      <AuthenticatedRoute  path="/med/patients/view"  comp={PatientListView}
                       authenticated={this.state.authenticated} user={this.state.currentUser}>
                       </AuthenticatedRoute>
                     <Route path="/oauth2/redirect" component={OAuthRedirectHandler}/>

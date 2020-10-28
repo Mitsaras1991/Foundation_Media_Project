@@ -12,15 +12,16 @@ public class TestSession {
     private Long id;
     @Column(name = "test_type")
     private Integer testType;
-    @Column(name = "Test_ID ")
-    private Long testId;
+    @OneToOne
+    @JoinColumn(name = "Test_ID", referencedColumnName = "testID")
+    private Test testId;
     @Column(name = "DataURL")
     private String dataUrl;
 
     public TestSession() {
     }
 
-    public TestSession(Integer testType, Long testId, String dataUrl) {
+    public TestSession(Integer testType, Test testId, String dataUrl) {
         this.testType = testType;
         this.testId = testId;
         this.dataUrl = dataUrl;
@@ -34,7 +35,7 @@ public class TestSession {
         return testType;
     }
 
-    public Long getTestId() {
+    public Test getTestId() {
         return testId;
     }
 
@@ -46,7 +47,7 @@ public class TestSession {
         this.testType = testType;
     }
 
-    public void setTestId(Long testId) {
+    public void setTestId(Test testId) {
         this.testId = testId;
     }
 

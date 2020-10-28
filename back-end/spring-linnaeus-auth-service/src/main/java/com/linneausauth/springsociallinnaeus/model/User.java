@@ -29,12 +29,30 @@ public class User {
     private boolean emailVerified = false;
     @Column(name = "Organization")
     private int OrganizationId=1;
+
+    @Column(name = "lat")
+    private Float latitude;
+    @Column(name = "longitude")
+    private Float longitude;
     public User() {
     }
 
 
+    public Float getLatitude() {
+        return latitude;
+    }
 
+    public void setLatitude(Float latitude) {
+        this.latitude = latitude;
+    }
 
+    public Float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Float longitude) {
+        this.longitude = longitude;
+    }
 
     public String getName() {
         return name;

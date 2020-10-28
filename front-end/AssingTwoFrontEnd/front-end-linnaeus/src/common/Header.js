@@ -21,7 +21,7 @@ console.log(this.props)
                                 { this.props.authenticated ? (
                                     <ul>
                                         <li>
-                                            <NavLink to={`/dashboard`} className="link">Profile</NavLink>
+                                            <NavLink to={`/profile`} className="link">Profile</NavLink>
                                             </li>
                                           <li>
                                           <AuthorityLinks {...this.props}/>  

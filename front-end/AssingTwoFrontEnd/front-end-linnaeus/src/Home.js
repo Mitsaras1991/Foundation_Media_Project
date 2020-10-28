@@ -13,7 +13,7 @@ class Home extends Component{
         console.log(this.props.location)
         console.log(this.props.location.state)
         const {state}=this.props.location
-      const redirectPathAfterLogin= state?state.from.pathname:"/dashboard/"
+      const redirectPathAfterLogin= state?state.from.pathname:"/profile/"
         //console.log(from)
 if(this.props.authenticated){
  return(
@@ -32,7 +32,7 @@ if(this.props.authenticated){
                         <a className="btn btn-block social-btn google" href={GOOGLE_AUTH_URL}>
                         <img src={googleLogo} alt="Google" /> Log in with Google as Patient</a>
                         <a className="btn btn-block social-btn facebook" href={FACEBOOK_AUTH_URL}>
-                         <img src={fblogo} alt="Facebook" /> Log in with Facebook as Physician</a>
+                         <img src={fblogo} alt="Facebook" /> Log in with Facebook as Doctor</a>
                         <a className="btn btn-block social-btn github" href={GITHUB_AUTH_URL}>
                         <img src={githubLogo} alt="Github" /> Log in with Github as Researcher</a>
                     </div>
