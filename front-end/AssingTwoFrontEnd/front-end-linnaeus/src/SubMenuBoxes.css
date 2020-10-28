@@ -1,0 +1,73 @@
+.flex-div2{
+    display: flex;
+}
+/*big boxes*/
+.p1{
+    flex:1;
+    border-bottom: 8vh solid #D54D5C;
+}
+.p1:hover{
+    color: white;
+    background-color: #d54d5c;
+}
+
+.d2{
+    flex:1;
+    border-bottom: 8vh solid royalblue;
+}
+.d2:hover{
+    color: white;
+    background-color:royalblue;
+}
+.r3{
+    flex:1;
+    border-bottom: 8vh solid lightseagreen;
+}
+.r3:hover{
+    color: white;
+    background-color: lightseagreen;
+}
+.p1 h2, .p1 p, .d2 h2, .d2 p, .r3 h2, .r3 p{
+    text-align: left;
+    padding: 0 20px 10px 50px;
+ }
+ .p1 h2, .d2 h2, .r3 h2{
+    padding-top: 50px;
+ }
+
+/* social buttons in big boxes */
+
+.border-fb{   
+    border: 1px solid royalblue;
+}
+.border-go{   
+    border: 1px solid #d54d5c;
+}
+.border-git{   
+    border: 1px solid seagreen;
+}
+.btn-S {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 0 20px;
+    font-size: 14px;
+    border-radius: 50px;
+    height: 45px;
+    line-height: 45px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    position: relative;
+    color: rgba(0,0,0,.65);
+    background-color: white;
+    outline: none;
+  }

@@ -22,7 +22,7 @@ class TappingBox extends Component {
                         </tr>
                     </table>
                 </div>
-                <svg width="180" height="1000px" >
+                <svg width="180" height="1000px" onClick={this.onHandleClick}>
 
                     {this.props.tappingBox.map((boxes, i) => {
                         if (boxes.button == 1 && boxes.correct == 1) {

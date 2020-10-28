@@ -76,8 +76,8 @@ class CsvFileView extends Component{
     }   
      else  return(     
     <>
-        {authority==="researcher"?<><ReasearcherDataView  testType={testType}  columns={this.state.columns} data={this.state.csv.data} />        </>    
-       :<Notes url={dataUrl} data={this.state.csv.data} testType={testType}/>}
+        {authority==="researcher"?<><ReasearcherDataView {...this.props} url={dataUrl} testType={testType}  columns={this.state.columns} data={this.state.csv.data} />        </>    
+       :<Notes {...this.props} url={dataUrl} data={this.state.csv.data} testType={testType}/>}
         <>
  
     </> 
@@ -108,19 +108,22 @@ class ReasearcherDataView extends React.Component{
                 </Button>
 {
     this.state.showFile?   <>
+         <DataTableExtensions
+          columns={this.props.columns}
+          data={this.props.data}
+         >
+         <DataTable
 
-    <DataTable
-    columns={this.props.columns}
-    data={this.props.data}
     defaultSortAsc={false}
-    noHeader
+    
     pagination
     highlightOnHover
         />
-        <CsvDownloader
+        </DataTableExtensions>
+{/*         <CsvDownloader
             filename={`${this.props.dataUrl}.csv`}
             data={this.props.data}
-            text="DOWNLOAD" /></>:<Notes url={this.props.dataUrl} data={this.props.data} testType={this.props.testType}/>
+            text="DOWNLOAD" /> */}</>:<Notes {...this.props}  data={this.props.data} testType={this.props.testType}/>
 }
             </div>
         )

@@ -6,29 +6,13 @@ class SpiralParticle extends Component {
     }
     render() {
 
-        console.log(this.props.spiralParticle);
+        console.log(this.props.user);
         return (
             <div>
-                <svg width="500" height="300" style = {{border: "1px solid grey"}}>
+                
+                <svg width="800" height="800" style = {{border: "1px solid grey"}}>
+                {this.props.notes.length && <SvgAnnotationNotes {...this.props}/> }
 
-                <EditableAnnotation
-                x={150}
-                 y={170}
-                dy={117}
-                dx={162}
-              color={"#9610ff"}     
-             title={"Annotations :)"}
-             label={"Longer text to show text wrapping"}
-         className="show-bg"
-            >
-  <ConnectorLine />
-  <Note 
-    align={"middle"}
-    orientation={"topBottom"}
-    bgPadding={20}
-    padding={15}
-    titleColor={"#59039c"} />
-</EditableAnnotation>
                     {this.props.spiralParticle.map((particle) => (
 
                         <circle cx={particle.X} cy={particle.Y} r="4" style ={{fill:"#00939D"}} />
@@ -42,4 +26,28 @@ class SpiralParticle extends Component {
 
 }
 
+
+const SvgAnnotationNotes=({notes})=>{
+    notes.forEach((p,i)=>console.log(p))
+   return notes.map((note,index)=><EditableAnnotation key={index}
+        x={100}
+         y={157}
+        dy={index*130}
+        dx={400}
+      color={"#9610ff"}     
+     title={`Annotations : ${note.med.email} `}
+     label={`${note.note}`}
+ className="show-sm"
+    >
+<ConnectorLine/>
+<Note 
+align={"middle"}
+orientation={"topBottom"}
+bgPadding={20}
+padding={15}
+titleColor={"#59039c"} />
+</EditableAnnotation>)
+}
 export default SpiralParticle;
+
+

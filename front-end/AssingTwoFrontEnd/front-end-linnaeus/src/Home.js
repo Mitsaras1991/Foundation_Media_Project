@@ -5,6 +5,8 @@ import fblogo from './images-logos/fb-logo.png';
 import googleLogo from './images-logos/google-logo.png';
 import githubLogo from './images-logos/github-logo.png';
 import {GOOGLE_AUTH_URL, FACEBOOK_AUTH_URL,GITHUB_AUTH_URL} from './constants'
+import BigText from "./BigText";
+import SubMenuBox from "./SubMenuBox";
 class Home extends Component{
     constructor(props){
         super(props)
@@ -26,7 +28,7 @@ if(this.props.authenticated){
  else return(
             //this.props.history.push(this.props.location.state.from.pathname)
             <div className="login-container">
-                <div className="login-content">
+                <div className="login-content hidden">
                  <h1 className="login-title">Login to SpringSocial</h1>
                     <div className="social-login">
                         <a className="btn btn-block social-btn google" href={GOOGLE_AUTH_URL}>
@@ -37,6 +39,10 @@ if(this.props.authenticated){
                         <img src={githubLogo} alt="Github" /> Log in with Github as Researcher</a>
                     </div>
                 </div> 
+                <div>
+                    <BigText/>
+                    <SubMenuBox/>
+                </div>
             </div> 
         )
     }

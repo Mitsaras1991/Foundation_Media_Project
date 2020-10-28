@@ -1,5 +1,5 @@
 
-.app-header {
+/* .app-header {
     height: 60px;
     position: relative;
     z-index: 10;
@@ -46,4 +46,102 @@
 
 .app-nav ul li a.active {
     color: #0f96f6;
+} */
+.app-header {
+    height: 60px;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    margin-bottom:70px;
+}
+
+.app-title {
+    line-height: 60px;
+    font-weight: 800;
+    vertical-align: middle;
+    font-size: 1.65em;
+    float : left;
+}
+
+.app-branding {
+    float: left;
+}
+
+.app-options {
+    margin:auto;
+    position: absolute;
+    top: 50px;
+    right:20%;
+}
+.app-nav{
+    float:right;
+}
+.app-nav ul {
+    list-style-position: none;
+    margin: 0;
+    padding: 0;
+}
+
+.app-nav ul li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.app-nav ul li a {
+    display: inline-block;
+    line-height: 60px;
+    vertical-align: middle;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: rgba(0,0,0,0.65);
+}
+
+.app-nav ul li a:hover {
+    color: black;
+}
+
+.app-nav ul li a.active {
+    color:black;
+}
+.nav{
+    float: right;
+}
+.nav ul{
+    display: inline-block;
+
+}
+.nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 24px;
+}
+.p{
+    border-bottom: 3px solid #d54d5c;
+}
+.d{
+    border-bottom: 3px solid  royalblue;
+}
+.r{
+    border-bottom: 3px solid  lightseagreen;
+}
+/* menu items*/
+li.p:hover, li.p:hover a, .p a:hover {
+    color: white;
+    background-color: #d54d5c;
+}
+
+li.d:hover, li.d:hover a,  .d a:hover{
+    color: white;
+    background-color: royalblue;
+}
+li.r:hover, li.r:hover a, .r a:hover{
+    color: white;
+    background-color: lightseagreen;
+}
+.black{
+    color: rgba(0, 0, 0, 0.65);
+}
+.link-col{
+    color:#40a9ff;
 }
