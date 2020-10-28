@@ -28,13 +28,13 @@ const DefaultPatientView=({patients , ...rest})=>{
     )
 }
     
-    
+
 const Patient=({email,id,name})=>{
     console.log(email)
     return(<div>
         <div>
             <h5>{email}</h5>
-            <span>{name}</span>
+            <a href={`/med/${id}/vis`}><span>{name}</span></a>
         </div>
     </div>)
 }

@@ -24,6 +24,7 @@ class PatientListView extends React.Component{
     }
     render(){
         const {loading,patients}=this.state
+        console.log(patients)
         if(loading){
             return(<LoadingScreen/>)
         }

@@ -17,7 +17,7 @@ class OAuthRedirectHandler extends Component{
         if(token){
             localStorage.setItem(ACCESS_TOKEN,token)
             return <Redirect to={{
-                    pathname:"/dashboard",
+                    pathname:"/profile",
                     state:{from:this.props.location}
                 }}
             />

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
  const containerStyle = {
     //position: 'relative',  
     width: '60%',
-    height: '40%'
+    height: '60%'
   }
   const style = {
-    width: '90%',
-    height: '90%'
+    width: '100%',
+    height: '100%'
   }
 export class MapContainer extends React.Component {
     constructor(props){
@@ -50,15 +50,14 @@ export class MapContainer extends React.Component {
       <Map google={this.props.google}
       onClick={this.onMapClicked}
       containerStyle={containerStyle}
-      fullscreenControl={true}   
+      fullscreenControl={false}   
       mapTypeControl={true}
-      mapTypeControl= {true}
       initialCenter={{
         lat: 55,
         lng: 13
       }}
       style={style}
-      zoom={1}>
+      zoom={2}>
           {patients.map((pa,index)=>
           <Marker 
           key={index} 
