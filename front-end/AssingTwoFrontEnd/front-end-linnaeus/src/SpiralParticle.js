@@ -34,7 +34,7 @@ const SvgAnnotationNotes=({notes})=>{
          y={157}
         dy={index*130}
         dx={400}
-      color={"#9610ff"}     
+      color={"#8C5089"}     
      title={`Annotations : ${note.med.email} `}
      label={`${note.note}`}
  className="show-sm"
@@ -45,7 +45,7 @@ align={"middle"}
 orientation={"topBottom"}
 bgPadding={20}
 padding={15}
-titleColor={"#59039c"} />
+titleColor={"#8C5089"} />
 </EditableAnnotation>)
 }
 export default SpiralParticle;

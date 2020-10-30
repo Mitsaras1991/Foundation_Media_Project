@@ -16,6 +16,7 @@ import RolePatientView from './Views/RolePatientView';
 import PatientDataVisualization from './PatientDataVisualization';
 import ProfileInfo from './OAuth2/profile/ProfileInfo';
 import YoutubeList from './YoutubeList';
+import RssFeed from './RssFeed';
 
 class App extends React.Component {
   constructor(props){
@@ -79,6 +80,9 @@ class App extends React.Component {
                      authenticated={this.state.authenticated} user={this.state.currentUser}>
                      </AuthenticatedRoute>
                      <AuthenticatedRoute  path="/test/:testType/:dataUrl/view"  comp={CsvFileView}
+                      authenticated={this.state.authenticated} user={this.state.currentUser}>
+                      </AuthenticatedRoute>
+                      <AuthenticatedRoute  path="/rss"  comp={RssFeed}
                       authenticated={this.state.authenticated} user={this.state.currentUser}>
                       </AuthenticatedRoute>
                       <AuthenticatedRoute  path="/med/:patientID/vis"  comp={PatientDataVisualization}

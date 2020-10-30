@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
     height: '60%'
   }
   const style = {
-    width: '100%',
-    height: '100%'
+    width: '50%',
+    height: '70%'
   }
 export class MapContainer extends React.Component {
     constructor(props){
@@ -47,7 +47,8 @@ export class MapContainer extends React.Component {
       console.log(this.state.selectedPatient)
       const {patients}=this.props;
     return (
-      <Map google={this.props.google}
+      <div style={{width:"50%"}}>
+<Map google={this.props.google}
       onClick={this.onMapClicked}
       containerStyle={containerStyle}
       fullscreenControl={false}   
@@ -75,6 +76,8 @@ export class MapContainer extends React.Component {
             </div>
         </InfoWindow>  
       </Map>
+      </div>
+      
     );
   }
 }

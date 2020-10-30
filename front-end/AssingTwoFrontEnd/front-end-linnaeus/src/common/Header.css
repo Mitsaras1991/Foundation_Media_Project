@@ -1,5 +1,5 @@
 
-/* .app-header {
+ .app-header {
     height: 60px;
     position: relative;
     z-index: 10;
@@ -46,7 +46,7 @@
 
 .app-nav ul li a.active {
     color: #0f96f6;
-} */
+} 
 .app-header {
     height: 60px;
     position: relative;

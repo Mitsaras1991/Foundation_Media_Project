@@ -40,7 +40,7 @@ class PatientDataVisualization extends React.Component{
         <div>
             PatientDataVisualization
             <Row className="justify-content-md-center">
-                {authority==="researcher" && <Col xs={3}><RssFeed/></Col>}
+                {/* {authority==="researcher" && <Col xs={3}><RssFeed/></Col>} */}
                 <Col xs={9}>{testSessions?<PatientTestData sessionList={testSessions}/>:<div>No data available</div>}</Col>
             </Row>
         </div>)

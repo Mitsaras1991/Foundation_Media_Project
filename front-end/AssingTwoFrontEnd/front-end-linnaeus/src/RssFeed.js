@@ -47,8 +47,8 @@ const Feed=({feed})=>{
             <Toast key={index}>
                 <Toast.Header closeButton={false}>
                     <small>{item.pubDate}</small>
-                </Toast.Header>
-                <Toast.Body>
+                     </Toast.Header>
+                    <Toast.Body>
                     <a href={item.link} target="_blank">{item.title}</a>
                     </Toast.Body>
             </Toast>

@@ -1,7 +1,9 @@
 import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 import {withGoogleMap, GoogleMap, Marker, withScriptjs } from "react-google-maps"
 import GoogleMaps from '../GoogleMaps'
 import MyMapComponent from '../MapComponent'
+import RssFeed from '../RssFeed'
 
 const RolePatientView=({user,patients,...rest})=>{
     const {authority}=user.role
@@ -49,8 +51,9 @@ class ResearcherPatientView extends React.Component{
         render(){
             console.log(this.props)
             return(<div>
+                    
+             <GoogleMaps patients={this.props.patients}/>
                 
-                <GoogleMaps patients={this.props.patients}/>
             </div>)
         }
 }
