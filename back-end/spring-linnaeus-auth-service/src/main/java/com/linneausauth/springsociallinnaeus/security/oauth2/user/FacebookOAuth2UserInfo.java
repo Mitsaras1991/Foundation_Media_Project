@@ -7,11 +7,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
-@Service
 public class FacebookOAuth2UserInfo extends OAuth2UserInfo{
-    @Autowired
-    private RolesRepository rolesRepository;
-    private final String Facebook_Role= "physician";
+
+    private final String Facebook_Role= "doctor";
 
     public FacebookOAuth2UserInfo(Map<String, Object> attributes) {
         super(attributes);

@@ -111,6 +111,47 @@ export function getTestSession(){
         method: 'GET'
     });
 }
+export function getPatients(){
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    
+    return request({
+        url: API_BASE_URL + "/med/patients",
+        method: 'GET'
+    });
+}
+export function getTestSessionPatient(patientID){
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    
+    return request({
+         url: API_BASE_URL + `/testSessions/${patientID}/`,
+        method: 'GET'
+    });
+}
+
+export function getPatientTests(patientID){
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    
+    return request({
+        url: API_BASE_URL + `/patient/${patientID}/tests`,
+        method: 'GET'
+    });
+}
+export function getSessionNotes(fileName){
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    
+    return request({
+        url: API_BASE_URL + `/testSessions/${fileName}/notes`,
+        method: 'GET'
+    });
+}
 function blobToFile(theBlob, fileName){
     //A Blob() is almost a File() - it's just missing the two properties below which we will add
     theBlob.lastModifiedDate = new Date();

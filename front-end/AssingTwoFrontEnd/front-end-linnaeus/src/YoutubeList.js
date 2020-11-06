@@ -9,17 +9,15 @@ https://youtu.be/effXAxgxXb0 */
 const videoIds=["effXAxgxXb0","7CFLm1SL5EU","MsXlZ_phGNY","wkDiOCIX_xA"]
 class YoutubeList extends React.Component{
     render(){
+        console.log("AAAAA")
         console.log("YOYTUBE LIST")
-        return(
-            
+        return(  
         <div>
             YoutubeList
             {
-            videoIds.map((item,index)=><YoutubeVideoPlayer key={index} videoId={item} />
-             
+            videoIds.map((item,index)=><YoutubeVideoPlayer key={index} videoId={item}/>    
             )}
         </div>)
-    }
- 
+    } 
 }
 export default YoutubeList;

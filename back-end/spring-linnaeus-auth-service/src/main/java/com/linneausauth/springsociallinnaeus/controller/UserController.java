@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
 
@@ -39,16 +40,8 @@ public class UserController {
         logger.info(user.getRole().getAuthority());
          return user;
     }
-    @GetMapping("/user/you")
-    @PreAuthorize("hasAuthority('physician')")
 
-    public User getCurrenatUser(@CurrentUser UserPrincipal userPrincipal) {
-        logger.info("USER INFO");
-        User user=userRepository.findById(userPrincipal.getId())
-                .orElseThrow(() -> new ResourceNotFoundException("User", "id", userPrincipal.getId()));
-        logger.info(user.getRole().getAuthority());
-        return user;
-    }
+    @Transactional
     @GetMapping(value = "/report/{reportName}", produces = "text/csv")
     @PreAuthorize("hasRole('ROLE_USER')")
     public ResponseEntity generateReport(@PathVariable(value = "reportName") String reportName) {

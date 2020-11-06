@@ -8,8 +8,16 @@ const AuthorityLinks=({user,...rest})=> {
     console.log(authority)
 return(
         <>
-        <NavLink to={`/dashboard/view`} className="link">{authority==="patient"?'Exercise Video':'Patient Test Data'}</NavLink>
-        </>
+        {
+            authority==="patient"?<NavLink className="link" to={'/patient/exercise/videos'}>Exercise Video</NavLink>
+            :<NavLink className="link" to={'/med/patients/view'}>Patients</NavLink>
+        }
+        {
+            authority==="researcher" && <NavLink className="link" to={'/rss'}> RSS</NavLink>
+
+        }
+{/*         <NavLink to={`/dashboard/view`} className="link">{authority==="patient"?'Exercise Video':' Test Session Data'}</NavLink>
+ */}        </>
     )
 
 }
